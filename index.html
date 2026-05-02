@@ -90,12 +90,12 @@
 
 <main>
 
-  <p class="updated">Last updated: 1 May 2026</p>
+  <p class="updated">Last updated: 2 May 2026</p>
 
   <div class="highlight">
-    InciCheck does not collect, transmit, or share any personal information.
-    Everything the app stores — your scan history, saved results, and purchase status —
-    is kept exclusively on your device and is never sent anywhere.
+    InciCheck does not collect or share any personal information.
+    Your scan history, saved results, and purchase status are stored exclusively on your device.
+    Camera images captured for OCR scanning are transmitted to Google Cloud Vision for text extraction only, and are not stored or used for any other purpose.
   </div>
 
   <h2>1. Who We Are</h2>
@@ -112,7 +112,7 @@
     <li>Location data</li>
     <li>Device identifiers or advertising IDs</li>
     <li>Usage analytics or crash reports</li>
-    <li>Camera images or photos — images are processed locally and immediately discarded</li>
+    <li>Persistent camera images or photos — images sent for OCR are not stored by InciCheck or retained by Google Cloud Vision after processing</li>
     <li>Any personally identifiable information of any kind</li>
   </ul>
 
@@ -131,12 +131,14 @@
     You can delete all of this data at any time by uninstalling the app.
   </p>
 
-  <h2>4. Camera Permission</h2>
+  <h2>4. Camera Permission &amp; OCR Processing</h2>
   <p>
     InciCheck requests access to your device camera solely for the purpose of scanning
-    product ingredient labels. No images are stored, uploaded, or shared. All image
-    processing happens entirely on your device and the image data is discarded immediately
-    after text extraction.
+    product ingredient labels. When you take a scan, the image is transmitted to
+    <strong>Google Cloud Vision API</strong> for text extraction (OCR). The image is used
+    only for this purpose and is not stored by InciCheck or retained by Google beyond
+    the processing request. No images are saved to your device or shared with any other party.
+    Google Cloud Vision is subject to <a href="https://policies.google.com/privacy" target="_blank">Google's Privacy Policy</a>.
   </p>
 
   <h2>5. In-App Purchases</h2>
@@ -149,9 +151,14 @@
 
   <h2>6. Third-Party Services</h2>
   <p>
-    InciCheck does not integrate any third-party analytics, advertising, tracking, or
-    data collection services. No SDKs from Facebook, Google Analytics, Firebase, Crashlytics,
+    InciCheck uses <strong>Google Cloud Vision API</strong> solely for OCR text extraction
+    from ingredient label images. No analytics, advertising, tracking, or crash reporting
+    services are integrated. No SDKs from Facebook, Google Analytics, Firebase, Crashlytics,
     Amplitude, or similar services are included in the app.
+  </p>
+  <p>
+    Ingredient data is sourced from <strong>Open Beauty Facts</strong>, a public database.
+    Product name lookups are sent as plain text queries with no identifying information attached.
   </p>
 
   <h2>7. Children's Privacy</h2>
@@ -163,10 +170,10 @@
 
   <h2>8. Data Security</h2>
   <p>
-    Because InciCheck does not transmit any data to external servers, there is no
-    server-side storage to secure. All on-device data is protected by your device's
-    own operating system security and any screen lock or biometric authentication
-    you have enabled.
+    InciCheck transmits ingredient label images to Google Cloud Vision over an encrypted
+    HTTPS connection. No images are stored by InciCheck after processing.
+    All on-device data is protected by your device's own operating system security
+    and any screen lock or biometric authentication you have enabled.
   </p>
 
   <h2>9. Changes to This Policy</h2>
